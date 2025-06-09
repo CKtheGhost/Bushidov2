@@ -5,11 +5,9 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract BushidoNFT is ERC721, ERC721Enumerable, Ownable, ReentrancyGuard {
-    using Counters for Counters.Counter;
+
+contract BushidoNFT is ERC721, ERC721Enumerable, Ownable {
     
     // Constants
     uint256 public constant MAX_SUPPLY = 1600;
@@ -19,7 +17,7 @@ contract BushidoNFT is ERC721, ERC721Enumerable, Ownable, ReentrancyGuard {
     uint256 public constant TOKENS_PER_CLAN = 200;
     
     // State
-    Counters.Counter private _tokenIdCounter;
+    uint256 private _tokenIdCounter;
     mapping(uint256 => uint256) public tokenClan;
     mapping(uint256 => uint256) public tokenRarity;
     mapping(address => uint256) public mintedPerWallet;
@@ -40,16 +38,16 @@ contract BushidoNFT is ERC721, ERC721Enumerable, Ownable, ReentrancyGuard {
         emit MintActivated();
     }
     
-    function mint(uint256 quantity) external payable nonReentrant {
+    function mint(uint256 quantity) external payable {
         require(mintActive, "Mint not active");
         require(quantity > 0 && quantity <= MAX_PER_WALLET, "Invalid quantity");
         require(mintedPerWallet[msg.sender] + quantity <= MAX_PER_WALLET, "Exceeds wallet limit");
-        require(_tokenIdCounter.current() + quantity <= MAX_SUPPLY, "Exceeds supply");
+        require(_tokenIdCounter + quantity <= MAX_SUPPLY, "Exceeds supply");
         require(msg.value >= MINT_PRICE * quantity, "Insufficient payment");
         
         for (uint256 i = 0; i < quantity; i++) {
-            _tokenIdCounter.increment();
-            uint256 tokenId = _tokenIdCounter.current();
+            _tokenIdCounter++;
+            uint256 tokenId = _tokenIdCounter;
             
             // Assign clan sequentially (200 per clan)
             uint256 clan = ((tokenId - 1) / TOKENS_PER_CLAN) + 1;
