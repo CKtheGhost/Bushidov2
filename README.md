@@ -6,7 +6,7 @@ Bushido NFT is an experimental storytelling project where a limited collection o
 
 ## Lore Snapshot
 
-*Excerpt from the project lore:* An ambitious entrepreneur uncovers an artifact that maps a hidden valley. Activating it flings him into 16th‑century Japan, where eight clans embodying the virtues of Bushido battle a malevolent doppelgänger seeking to corrupt them.【0b5429†L1-L23】
+*Excerpt from the project lore:* An ambitious entrepreneur discovers an artifact that maps a hidden valley. When he activates it he is hurled into 16th‑century Japan, where eight clans exemplifying Bushido must resist his malevolent doppelgänger.
 
 ## Repository Guide
 
