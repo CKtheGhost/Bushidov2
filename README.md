@@ -18,7 +18,7 @@ Bushido NFT is an experimental storytelling project where a limited collection o
 
 1. Clone the repository
 2. Install dependencies with `pnpm install`
-3. Configure environment variables (`.env.example`)
+3. Copy `.env.example` to `.env` and fill in RPC_URL, CONTRACT_ADDRESS, and other values
 4. Deploy contracts via `pnpm deploy`
 5. Start the backend API with `pnpm --filter backend dev`
 6. Launch the frontend with `pnpm --filter frontend dev`
