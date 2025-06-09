@@ -1,38 +1,67 @@
-# Bushido NFT - Interactive Anime Storytelling
+# Bushido NFT
 
-Where honor meets blockchain. Shape the destiny of samurai through your vote.
+![Bushido Logo](Bushido-Logo-RED.jpg)
 
-## Overview
+Bushido NFT is an experimental storytelling project where a limited collection of on-chain samurai grants holders the ability to steer an animated series. Votes are weighted by rarity, letting the community decide how the saga unfolds.
 
-Bushido is a revolutionary NFT project that combines:
-- 1,600 unique samurai NFTs across 8 clans
-- Interactive episodic anime where holders vote on story decisions
-- Rarity-based voting power system
-- Professional anime production
+## Lore Snapshot
+
+*Excerpt from the project lore:* An ambitious entrepreneur discovers an artifact that maps a hidden valley. When he activates it he is hurled into 16th‑century Japan, where eight clans exemplifying Bushido must resist his malevolent doppelgänger.
+
+## Repository Guide
+
+- **[Architecture](Architecture.md)** – directory breakdown of contracts, backend and frontend.
+- **[Complete Tech Stack](CompleteTechStack.md)** – frameworks and infrastructure used.
+- **[Lore Overview](docs/Lore.md)** – summary of the anime narrative.
 
 ## Quick Start
 
 1. Clone the repository
-2. Install dependencies: `pnpm install`
-3. Set up environment variables (see `.env.example`)
-4. Deploy contracts: `pnpm deploy`
-5. Start development: `pnpm dev`
+2. Install dependencies with `pnpm install`
+3. Copy `.env.example` to `.env` and fill in RPC_URL, CONTRACT_ADDRESS, and other values
+4. Deploy contracts via `pnpm deploy`
+5. Start the backend API with `pnpm --filter backend dev`
+6. Launch the frontend with `pnpm --filter frontend dev`
+
+## Metadata Generation
+
+Before deploying the collection you can generate placeholder metadata using the
+script in the `scripts` package:
+
+```bash
+pnpm --filter scripts generate-metadata
+```
+The script saves JSON files to the `metadata/` folder and uploads them to IPFS
+via Pinata. Update the images in `scripts/images` beforehand.
 
 ## Voting Mechanics
 
-NFT holders receive voting power based on rarity:
+Rarity determines a holder's voting power:
+
 - Common: 1 vote
 - Uncommon: 4 votes
 - Rare: 9 votes
 - Epic: 16 votes
 - Legendary: 25 votes
 
+## Sample Characters
+
+Below are a few samurai NFTs that can serve as story protagonists:
+
+![Samurai #78](78.jpg)
+![Samurai #139](139.jpg)
+![Samurai #188](188.jpg)
+
+The full narrative pitch can be found in **Bushido Overview.pdf** at the project root. This PDF includes detailed episode outlines and character descriptions.
+
 ## Episode Schedule
 
-New episodes release weekly, with 48-hour voting windows for key decisions.
+Episodes release weekly with a 48‑hour voting window for key decisions.
 
 ## Connect
 
 - Website: [bushido.xyz]
 - Twitter: [@BushidoNFT]
 - Discord: [Join our community]
+
+

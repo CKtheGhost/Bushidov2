@@ -2,9 +2,20 @@
 import { create } from 'ipfs-http-client';
 import fs from 'fs/promises';
 import path from 'path';
+import * as dotenv from 'dotenv';
+
+dotenv.config({ path: '../.env' });
 
 const IPFS_GATEWAY = 'https://ipfs.io/ipfs/';
-const ipfs = create({ url: 'https://api.pinata.cloud' });
+const ipfs = create({
+  host: 'api.pinata.cloud',
+  port: 443,
+  protocol: 'https',
+  headers: {
+    pinata_api_key: process.env.PINATA_API_KEY || '',
+    pinata_secret_api_key: process.env.PINATA_SECRET_KEY || ''
+  }
+});
 
 interface Metadata {
   name: string;
@@ -85,3 +96,29 @@ function getRarityIndex(tokenId: number): number {
   if (normalized < 35) return 1;  // Uncommon
   return 0;                       // Common
 }
+
+async function uploadImage(tokenId: number, clan: string, rarity: string): Promise<string> {
+  const filePath = path.join('images', `${tokenId}.png`);
+  const file = await fs.readFile(filePath);
+  const { cid } = await ipfs.add({ path: filePath, content: file });
+  return cid.toString();
+}
+
+async function uploadDirectory(dir: string): Promise<string> {
+  const entries = await fs.readdir(dir);
+  const files = [] as Array<{ path: string; content: Buffer }>;
+  for (const name of entries) {
+    const content = await fs.readFile(path.join(dir, name));
+    files.push({ path: name, content });
+  }
+  let directoryCid = '';
+  for await (const result of ipfs.addAll(files, { wrapWithDirectory: true })) {
+    directoryCid = result.cid.toString();
+  }
+  return directoryCid;
+}
+
+generateMetadata().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

@@ -1,7 +1,7 @@
 // src/services/voting.ts
 import { ethers } from 'ethers';
 import { redis } from '../db/redis';
-import { BushidoNFT__factory } from '../types';
+import BushidoNFTAbi from '../abi/BushidoNFT.json' assert { type: 'json' };
 
 export class VotingService {
   private contract: ethers.Contract;
@@ -9,23 +9,16 @@ export class VotingService {
 
   constructor() {
     this.provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
-    this.contract = BushidoNFT__factory.connect(
+    this.contract = new ethers.Contract(
       process.env.CONTRACT_ADDRESS!,
+      BushidoNFTAbi,
       this.provider
     );
   }
 
   async getVotingPower(address: string): Promise<number> {
-    const balance = await this.contract.balanceOf(address);
-    let totalPower = 0;
-
-    for (let i = 0; i < balance; i++) {
-      const tokenId = await this.contract.tokenOfOwnerByIndex(address, i);
-      const power = await this.contract.getVotingPower(tokenId);
-      totalPower += Number(power);
-    }
-
-    return totalPower;
+    const power = await this.contract.getVotingPower(address);
+    return Number(power);
   }
 
   async recordVote(
@@ -42,11 +35,11 @@ export class VotingService {
     }
 
     // Record vote
-    await redis.set(voteKey, optionId, 'EX', 30 * 24 * 60 * 60); // 30 days
+    await redis.set(voteKey, optionId, { EX: 30 * 24 * 60 * 60 }); // 30 days
     
     // Increment vote count
     const countKey = `votes:${episodeId}:${optionId}`;
-    await redis.incrby(countKey, votingPower);
+    await redis.incrBy(countKey, votingPower);
   }
 
   async getVoteResults(episodeId: number): Promise<Record<string, number>> {
