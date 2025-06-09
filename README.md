@@ -20,7 +20,8 @@ Bushido NFT is an experimental storytelling project where a limited collection o
 2. Install dependencies with `pnpm install`
 3. Configure environment variables (`.env.example`)
 4. Deploy contracts via `pnpm deploy`
-5. Start development using `pnpm dev`
+5. Start the backend API with `pnpm --filter backend dev`
+6. Launch the frontend with `pnpm --filter frontend dev`
 
 ## Voting Mechanics
 
@@ -49,3 +50,4 @@ Episodes release weekly with a 48‑hour voting window for key decisions.
 - Website: [bushido.xyz]
 - Twitter: [@BushidoNFT]
 - Discord: [Join our community]
+

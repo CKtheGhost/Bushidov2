@@ -13,3 +13,4 @@ There he meets eight clans that each embody a virtue of Bushido. Their leaders i
 - **Duty Clan Leader:** disciplined and strategic【0c3894†L3-L20】
 
 The antagonist is a malevolent doppelgänger who seeks to control the artifact and twist the virtues for power.
+

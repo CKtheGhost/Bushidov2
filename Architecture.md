@@ -81,3 +81,4 @@ The final platform consists of three main services working together:
 
 These sections collectively represent the architecture we plan to deliver for
 the Bushido NFT project.
+
