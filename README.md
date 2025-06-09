@@ -23,6 +23,17 @@ Bushido NFT is an experimental storytelling project where a limited collection o
 5. Start the backend API with `pnpm --filter backend dev`
 6. Launch the frontend with `pnpm --filter frontend dev`
 
+## Metadata Generation
+
+Before deploying the collection you can generate placeholder metadata using the
+script in the `scripts` package:
+
+```bash
+pnpm --filter scripts generate-metadata
+```
+The script saves JSON files to the `metadata/` folder and uploads them to IPFS
+via Pinata. Update the images in `scripts/images` beforehand.
+
 ## Voting Mechanics
 
 Rarity determines a holder's voting power:
@@ -50,4 +61,5 @@ Episodes release weekly with a 48‑hour voting window for key decisions.
 - Website: [bushido.xyz]
 - Twitter: [@BushidoNFT]
 - Discord: [Join our community]
+
 
