@@ -3,20 +3,23 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "compile": "hardhat compile",
     "test": "hardhat test",
-    "deploy": "hardhat run scripts/deploy.ts --network abstract",
-    "deploy:testnet": "hardhat run scripts/deploy.ts --network abstractTestnet",
-    "verify": "hardhat verify",
-    "clean": "hardhat clean && rimraf typechain-types"
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.3",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@nomicfoundation/hardhat-verify": "^2.0.3",
+    "@typechain/hardhat": "^9.1.0",
     "@openzeppelin/contracts": "^5.0.1",
     "hardhat": "^2.19.4",
     "typescript": "^5.3.3",
     "@types/node": "^20.11.5",
     "ts-node": "^10.9.2",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "chai": "^4.3.10",
+    "@types/chai": "^4.3.11"
   }
 }

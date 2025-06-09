@@ -1,25 +1,16 @@
 {
-  "name": "bushido-nft",
-  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "pnpm --parallel run dev",
-    "build": "pnpm run build:contracts && pnpm --parallel run build",
-    "build:contracts": "pnpm --filter contracts run build",
     "test": "pnpm --parallel run test",
-    "deploy": "pnpm --filter scripts run deploy",
+    "build": "pnpm --parallel run build",
     "deploy:testnet": "pnpm --filter scripts run deploy:testnet",
-    "clean": "pnpm --parallel run clean && rimraf node_modules",
-    "format": "prettier --write '**/*.{js,jsx,ts,tsx,json,sol}'",
-    "lint": "pnpm --parallel run lint"
+    "deploy:mainnet": "pnpm --filter scripts run deploy:mainnet"
   },
+  "version": "1.0.0",
+  "name": "bushido-nft",
   "devDependencies": {
     "prettier": "^3.2.5",
-    "rimraf": "^5.0.5",
     "turbo": "^1.12.4"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
   }
 }
