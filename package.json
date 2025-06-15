@@ -1,20 +1,27 @@
 {
-  "version": "1.0.0",
-  "private": true,
-  "description": "Interactive NFT project with episodic anime storytelling",
   "type": "module",
-  "name": "bushido-nft",
   "devDependencies": {
     "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "@types/node": "^20.11.0",
     "turbo": "latest",
-    "prettier": "^3.2.5"
+    "typescript": "^5.3.3"
   },
+  "name": "bushido-nft",
+  "version": "2.0.0",
   "scripts": {
-    "test": "turbo run test",
-    "deploy:mainnet": "turbo run deploy --filter=@bushido/contracts -- --network abstract",
-    "deploy:testnet": "turbo run deploy --filter=@bushido/contracts -- --network abstractTestnet",
+    "test:contracts": "cd contracts && pnpm test",
+    "launch:stealth": "cd frontend && pnpm build && vercel --prod",
+    "deploy:testnet": "cd contracts && pnpm deploy -- --network abstractTestnet",
+    "build": "turbo run build",
+    "monitor:start": "cd backend && pnpm monitor",
+    "analytics:dashboard": "cd frontend && pnpm dev --port 3001",
     "dev": "turbo run dev --parallel",
-    "launch:stealth": "pnpm run build --filter=@bushido/frontend && vercel --prod",
-    "build": "turbo run build"
-  }
+    "generate:whitelist": "cd scripts && pnpm generate:whitelist",
+    "test:integration": "pnpm run test:contracts && pnpm run test:e2e",
+    "deploy:mainnet": "cd contracts && pnpm deploy -- --network abstract",
+    "test": "turbo run test",
+    "generate:metadata": "cd scripts && pnpm generate:metadata"
+  },
+  "private": true
 }

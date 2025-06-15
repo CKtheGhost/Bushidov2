@@ -2,240 +2,338 @@
 
 > **Interactive NFT project blending digital collectibles with episodic anime storytelling**
 
-## Project Overview
+## 📋 Table of Contents
 
-Bushido introduces a pioneering approach to NFT collections where holders directly shape an evolving anime narrative through on-chain voting. The collection features 1,600 unique samurai NFTs distributed across eight clans, each embodying a virtue of the Bushido code.
+- [Executive Summary](#executive-summary)
+- [The Eight Clans](#the-eight-clans)
+- [Collection Details](#collection-details)
+- [Interactive Anime Series](#interactive-anime-series)
+- [Voting System](#voting-system)
+- [Community & Communications](#community--communications)
+- [Technical Architecture](#technical-architecture)
+- [Launch Timeline](#launch-timeline)
+- [Current Status](#current-status)
+- [Revenue Model](#revenue-model)
+- [Risk Management](#risk-management)
 
-### Core Innovation
-NFT ownership drives story evolution, character development, and clan dynamics—creating the first truly interactive narrative-based NFT ecosystem.
+## Executive Summary
 
-## 🎯 Stealth Launch Strategy
+Bushido pioneers the convergence of blockchain technology and interactive storytelling through:
 
-### Phase 1: Stealth Drop
-- **Platform**: Abstract L2 (optimized for low gas fees)
-- **Website**: Minimalist landing with countdown timer and cryptic clan symbols
-- **Marketing**: 10-15 KOL early access without paid promotion
+- **1,600 unique samurai NFTs** across eight clans
+- **On-chain voting** that directly shapes an episodic anime series
+- **Dynamic NFT evolution** based on community decisions
+- **Abstract L2 deployment** for low gas fees and high throughput
 
-### Phase 2: Post-Mint Reveal
-- Full Bushido lore and clan descriptions
-- Voting mechanics and evolution system
-- Community Discord with clan-based channels
+## The Eight Clans
 
-### Phase 3: Series Launch
-- Episode 1 premiere (1 week post-sellout)
-- Weekly episodes with integrated voting
-- NFT evolution based on community decisions
+### 🐲 Dragon Clan - Courage
+- **Color**: Crimson (#DC2626)
+- **Traits**: Fierce determination, battle leadership
+- **Narrative Role**: First into battle, making brave decisions
+- **Token IDs**: 1-200
 
-## 🏗️ Technical Architecture
+### 🔥 Phoenix Clan - Rebirth
+- **Color**: Orange (#EA580C)
+- **Traits**: Rising from defeat, transformation
+- **Narrative Role**: Redemption arcs, second chances
+- **Token IDs**: 201-400
 
-### Project Structure
-```
-bushido-nft/
-├── contracts/              # Smart contracts (ERC-721 + voting mechanics)
-│   ├── contracts/         # Solidity contracts
-│   ├── scripts/          # Deployment scripts
-│   └── test/            # Contract tests
-├── frontend/             # Next.js stealth launch site
-│   ├── src/
-│   │   ├── app/         # App router pages
-│   │   ├── components/  # React components
-│   │   └── hooks/       # Custom hooks
-│   └── public/          # Static assets
-├── backend/             # Express.js API server
-│   └── src/
-│       ├── routes/      # API endpoints
-│       └── services/    # Business logic
-├── scripts/             # Utility scripts
-│   └── metadata/        # NFT metadata generation
-└── docs/               # Documentation
+### 🐯 Tiger Clan - Strength
+- **Color**: Golden (#F59E0B)
+- **Traits**: Physical prowess, direct action
+- **Narrative Role**: Overwhelming force, combat excellence
+- **Token IDs**: 401-600
 
-```
+### 🐍 Serpent Clan - Wisdom
+- **Color**: Emerald (#10B981)
+- **Traits**: Strategic thinking, calculated moves
+- **Narrative Role**: Advisors, master strategists
+- **Token IDs**: 601-800
 
-### Tech Stack
-- **Blockchain**: Abstract L2
-- **Smart Contracts**: Solidity + Hardhat
-- **Frontend**: Next.js 14 + RainbowKit + Wagmi
-- **Backend**: Express.js + Redis caching
-- **Storage**: IPFS (via Pinata)
-- **Deployment**: Vercel (frontend) + Railway (backend)
+### 🦅 Eagle Clan - Vision
+- **Color**: Azure (#3B82F6)
+- **Traits**: Far-seeing perspective, opportunity identification
+- **Narrative Role**: Long-term planning, reconnaissance
+- **Token IDs**: 801-1000
 
-## 📦 Collection Details
+### 🐺 Wolf Clan - Loyalty
+- **Color**: Indigo (#6366F1)
+- **Traits**: Pack mentality, unwavering dedication
+- **Narrative Role**: Brotherhood themes, collective sacrifice
+- **Token IDs**: 1001-1200
 
-### Distribution
+### 🐻 Bear Clan - Protection
+- **Color**: Violet (#8B5CF6)
+- **Traits**: Defensive stance, guardian mindset
+- **Narrative Role**: Safeguarding others, defensive strategies
+- **Token IDs**: 1201-1400
+
+### 🦁 Lion Clan - Leadership
+- **Color**: Magenta (#EC4899)
+- **Traits**: Commanding presence, decisive action
+- **Narrative Role**: Army commanders, kingdom decisions
+- **Token IDs**: 1401-1600
+
+## Collection Details
+
+### Supply & Pricing
 - **Total Supply**: 1,600 NFTs
-- **Per Clan**: 200 warriors
 - **Mint Price**: 0.03 ETH
-- **Max per Wallet**: 3 NFTs
+- **Max Per Wallet**: 3 NFTs
+- **Total Raise Potential**: 48 ETH
 
-### The Eight Clans
-| Clan | Virtue | Color | ID Range |
-|------|--------|-------|----------|
-| 🐲 Dragon | Courage | #DC2626 | 1-200 |
-| 🔥 Phoenix | Rebirth | #EA580C | 201-400 |
-| 🐯 Tiger | Strength | #F59E0B | 401-600 |
-| 🐍 Serpent | Wisdom | #10B981 | 601-800 |
-| 🦅 Eagle | Vision | #3B82F6 | 801-1000 |
-| 🐺 Wolf | Loyalty | #6366F1 | 1001-1200 |
-| 🐻 Bear | Protection | #8B5CF6 | 1201-1400 |
-| 🦁 Lion | Leadership | #EC4899 | 1401-1600 |
+### Rarity Distribution & Voting Power
 
-### Rarity Tiers
-- **Common** (50%): Base voting power
-- **Uncommon** (25%): 4x voting power
-- **Rare** (15%): 9x voting power
-- **Epic** (7.5%): 16x voting power
-- **Legendary** (2.5%): 25x voting power
+| Rarity | Supply | % of Total | Voting Power | Count |
+|--------|---------|-----------|--------------|-------|
+| Common | 800 | 50% | 1x | 800 |
+| Uncommon | 400 | 25% | 4x | 400 |
+| Rare | 240 | 15% | 9x | 240 |
+| Epic | 120 | 7.5% | 16x | 120 |
+| Legendary | 40 | 2.5% | 25x | 40 |
 
-## 🚀 Quick Start
+## Interactive Anime Series
 
-### Prerequisites
-- Node.js 18+
-- pnpm 8+
-- Git
+### Production Details
+- **Episode Length**: ~22 minutes (industry standard)
+- **Initial Season**: 8 episodes
+- **Release Schedule**: Weekly
+- **Production Method**: Hybrid pre-animated sequences with modular story branches
 
-### Installation
-```bash
-# Clone repository
-git clone https://github.com/your-org/bushido-nft.git
-cd bushido-nft
+### Distribution Strategy
+1. **Week 1-4**: Exclusive holder access via NFT-gated website
+2. **Month 2+**: Expansion to mainstream anime platforms
+3. **Long-term**: International distribution and licensing
 
-# Install dependencies
-pnpm install
+### Narrative Framework
+- **Core Story**: Classical samurai tale with web3 innovation
+- **Decision Points**: Each episode ends with 3 narrative choices
+- **Character Development**: Mixed predetermined + community-influenced arcs
+- **Clan Focus**: Each episode highlights different clan perspectives
 
-# Configure environment
-cp .env.example .env
-# Edit .env with your values
+## Voting System
+
+### Mechanics
+- **Voting Window**: 48 hours post-episode
+- **Interface**: Web-based wallet connection
+- **Power Calculation**: Automatic based on held NFTs
+- **Real-time Tracking**: Live vote counts without revealing winner
+- **On-chain Recording**: Immutable vote history
+
+### Voting Power Example
+```
+Holder A: 2 Common + 1 Rare = (2×1) + (1×9) = 11 votes
+Holder B: 1 Legendary = 1×25 = 25 votes
 ```
 
-### Development
-```bash
-# Start all services
-pnpm dev
+### Future Governance Expansion
+- Episode narrative decisions
+- Character introductions
+- Budget allocations
+- Partnership approvals
+- Merchandise designs
 
-# Or run individually:
-cd frontend && pnpm dev  # Frontend at http://localhost:3000
-cd backend && pnpm dev   # Backend at http://localhost:4000
+## Community & Communications
+
+### Discord Structure
+- **Verification**: Collab.Land NFT verification
+- **Clan Channels**: Private channels per clan
+- **Public Spaces**:
+  - General discussion
+  - Announcements
+  - Voting debates
+  - Support
+  - International channels
+
+### Communication Channels
+- **Discord**: Primary community hub
+- **Twitter/X**: Public announcements and spaces
+- **Telegram**: Quick updates and alerts
+- **Medium**: Deep-dive articles and lore
+- **YouTube**: Episode archives and BTS content
+- **Email**: Newsletter for traditional communication
+
+### Community Roles
+- **Holder**: Basic verified access
+- **Clan Member**: Clan-specific channel access
+- **Council Member**: Top holders from each clan
+- **Moderator**: Community management team
+
+## Technical Architecture
+
+### Smart Contract Features
+- **ERC-721 Standard** with custom extensions
+- **Multi-phase Minting**: Whitelist → Public
+- **On-chain Voting** with rarity-weighted power
+- **Evolution System** for metadata updates
+- **Security**: Reentrancy guards, emergency pause, multi-sig ownership
+
+### Infrastructure Stack
+```
+Frontend:
+- Next.js 14
+- RainbowKit wallet connection
+- Wagmi hooks
+- Three.js animations
+- Real-time WebSocket updates
+
+Backend:
+- Express.js API
+- Redis caching
+- Socket.io voting streams
+- Sentry monitoring
+- Analytics dashboard
+
+Blockchain:
+- Abstract L2 deployment
+- Hardhat development
+- Comprehensive test suite
+- Slither security analysis
 ```
 
-### Deployment
-```bash
-# Deploy smart contracts
-pnpm deploy:testnet  # Abstract testnet
-pnpm deploy:mainnet  # Abstract mainnet
+## Launch Timeline
 
-# Deploy frontend (stealth mode)
-cd frontend && vercel --prod
+### Phase 1: Stealth Launch (T-7 to T-0)
+- Minimal website with countdown
+- KOL whitelist distribution
+- Contract deployment to mainnet
+- Final security checks
 
-# Deploy backend
-cd backend && railway up
-```
+### Phase 2: Mint (T+0 to T+3 days)
+- Whitelist mint opens
+- Public mint 24 hours later
+- Real-time mint tracking
+- Community support active
 
-## 🎨 Current Status
+### Phase 3: Reveal (T+4 to T+7 days)
+- Full lore revelation
+- Clan descriptions published
+- Voting system demonstration
+- Discord community launch
+
+### Phase 4: Episode 1 (T+1 week)
+- First episode premiere
+- Initial voting window
+- Community engagement tracking
+- Results announcement
+
+### Phase 5: Series Run (Months 1-6)
+- Weekly episodes
+- Continuous voting cycles
+- NFT metadata evolution
+- Community growth
+
+### Phase 6: Expansion (Months 6-12)
+- Streaming partnerships
+- Merchandise launch
+- $HONOR token introduction
+- Ecosystem development
+
+## Current Status
 
 ### ✅ Completed
-- Project structure and monorepo setup
 - Smart contract architecture
-- Frontend stealth launch framework
-- Backend API structure
-- Deployment scripts
+- Frontend stealth site
+- Backend infrastructure
+- Voting system
+- Analytics dashboard
+- Security framework
+- Test suites
 
 ### 🚧 In Progress
-- Waiting for artist to upload artwork to Pinata
-- Smart contract testing and auditing
-- KOL outreach list compilation
+- Contract security audit
+- KOL outreach (60% complete)
+- Marketing materials
+- Legal documentation
 
-### 📋 Next Steps
-1. **Artwork Integration** (Pending)
-   - Receive IPFS hashes from artist
-   - Update metadata generation scripts
-   - Configure Pinata gateway
+### ⏳ Awaiting
+- **Artwork delivery from artist** (Critical blocker)
+- IPFS hash integration
+- Abstract L2 mainnet credentials
+- Final KOL confirmations
+- Episode 1 trailer
 
-2. **Smart Contract Finalization**
-   - Complete unit tests
-   - Run security audit
-   - Deploy to testnet
+### 📋 Pre-Launch Checklist
+- [ ] Receive artwork and generate metadata
+- [ ] Complete security audit
+- [ ] Finalize KOL whitelist
+- [ ] Configure mainnet deployment
+- [ ] Launch marketing campaign
+- [ ] Complete legal review
+- [ ] Test all systems end-to-end
 
-3. **Frontend Polish**
-   - Implement countdown timer
-   - Add subtle animations
-   - Optimize for mobile
+## Revenue Model
 
-4. **Launch Preparation**
-   - Finalize KOL list
-   - Set launch date/time
-   - Prepare reveal content
+### Primary Revenue Streams
 
-## 🔧 Key Scripts
+#### Initial Mint
+- **Revenue**: 48 ETH (at 100% sellout)
+- **Allocation**:
+  - 40% Development and operations
+  - 30% Anime production
+  - 20% Marketing
+  - 10% Reserve fund
 
-### Development
-```bash
-./dev.ps1              # Start development environment
-./run.ps1              # Run specific services
-```
+#### Secondary Royalties (7.5%)
+- **Projected Monthly**: 2-5 ETH
+- **Based on**: 20% monthly volume turnover
+- **Marketplace Coverage**: OpenSea, Blur, Magic Eden
 
-### Deployment
-```bash
-./deploy.ps1 testnet   # Deploy to testnet
-./deploy.ps1 mainnet   # Deploy to mainnet
-./launch-stealth.ps1   # Deploy stealth site
-```
+#### Streaming Rights (Year 1+)
+- **Exclusive Period**: $500K projected
+- **Platform Licensing**: $5-10M annually
+- **International Rights**: Additional revenue
 
-### Utilities
-```bash
-cd scripts
-pnpm generate-metadata # Generate NFT metadata
-pnpm upload-ipfs      # Upload to IPFS (when ready)
-```
+#### Merchandise (Month 6+)
+- **Initial Products**: Clan apparel, figures
+- **Projected Year 1**: $200K
+- **Holder Discounts**: 20% off retail
 
-## 🔐 Environment Variables
+#### $HONOR Token (Year 2)
+- **Treasury Allocation**: 20%
+- **Utility**: Governance, discounts, exclusive content
+- **Revenue**: Transaction taxes, LP fees
 
-Create a `.env` file based on `.env.example`:
+## Risk Management
 
-```env
-# Network Configuration
-ABSTRACT_RPC=https://api.abs.xyz
-ABSTRACT_TESTNET_RPC=https://api.testnet.abs.xyz
-PRIVATE_KEY=your_wallet_private_key
+### Technical Risks
+- **Smart Contract Vulnerabilities**
+  - Mitigation: Multiple audits, bug bounty program
+- **Infrastructure Scaling**
+  - Mitigation: Load testing, CDN distribution, redundancy
 
-# Contract Addresses (after deployment)
-CONTRACT_ADDRESS=
-IPFS_BASE_URI=
+### Market Risks
+- **Slow Mint Velocity**
+  - Mitigation: KOL amplification, price adjustment option
+- **Floor Price Volatility**
+  - Mitigation: Holder rewards, utility expansion
 
-# Frontend
-NEXT_PUBLIC_NETWORK=abstract
-NEXT_PUBLIC_CONTRACT_ADDRESS=
-NEXT_PUBLIC_CHAIN_ID=11124
-NEXT_PUBLIC_LAUNCH_TIME=2025-01-XX-00:00:00Z
+### Regulatory Risks
+- **Securities Classification**
+  - Mitigation: Legal review, utility focus
+- **Geographic Restrictions**
+  - Mitigation: Geoblocking, compliance framework
 
-# Backend
-PORT=4000
-REDIS_URL=redis://localhost:6379
+### Operational Risks
+- **Team Dependencies**
+  - Mitigation: Cross-training, documentation
+- **Production Delays**
+  - Mitigation: Buffer scheduling, backup vendors
 
-# IPFS/Pinata
-PINATA_API_KEY=
-PINATA_SECRET_KEY=
-```
+### Community Risks
+- **Low Voting Participation**
+  - Mitigation: Incentive programs, UX optimization
+- **Clan Imbalances**
+  - Mitigation: Rebalancing events, narrative adjustments
 
-## 📊 Launch Metrics
+## Contact & Links
 
-### Target Goals
-- **Mint Out**: 72 hours
-- **Floor Price**: 0.3 ETH (6 months)
-- **Voting Participation**: >80% per episode
-- **Holder Retention**: >90% (12 months)
-
-### Revenue Projections
-- **Year 1**: $500K (mint + royalties)
-- **Year 2**: $9M (+ streaming + merch)
-- **Year 3**: $17M (expanded ecosystem)
-
-## 🤝 Contributing
-
-This project is currently in stealth mode. Contributing guidelines will be published post-launch.
-
-## 📜 License
-
-All rights reserved. Details to be announced post-launch.
+- **Website**: [Coming Soon]
+- **Twitter**: [@BushidoNFT]
+- **Discord**: [Invite Link]
+- **Contract**: [To be deployed]
+- **OpenSea**: [Post-launch]
 
 ---
 
