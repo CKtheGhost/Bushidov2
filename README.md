@@ -1,38 +1,43 @@
-# Bushido NFT - Interactive Anime Storytelling
+# 🏯 Bushido NFT Collection
 
-Where honor meets blockchain. Shape the destiny of samurai through your vote.
+## Stealth Launch on Abstract
 
-## Overview
+*Eight clans. Eight virtues. One destiny.*
 
-Bushido is a revolutionary NFT project that combines:
-- 1,600 unique samurai NFTs across 8 clans
-- Interactive episodic anime where holders vote on story decisions
-- Rarity-based voting power system
-- Professional anime production
+### Quick Start
 
-## Quick Start
+\\\ash
+# Install dependencies
+pnpm install
 
-1. Clone the repository
-2. Install dependencies: `pnpm install`
-3. Set up environment variables (see `.env.example`)
-4. Deploy contracts: `pnpm deploy`
-5. Start development: `pnpm dev`
+# Configure environment
+cp .env.example .env
 
-## Voting Mechanics
+# Deploy to Abstract testnet
+pnpm deploy:testnet
 
-NFT holders receive voting power based on rarity:
-- Common: 1 vote
-- Uncommon: 4 votes
-- Rare: 9 votes
-- Epic: 16 votes
-- Legendary: 25 votes
+# Launch stealth site
+pnpm launch:stealth
+\\\
 
-## Episode Schedule
+### Launch Strategy
 
-New episodes release weekly, with 48-hour voting windows for key decisions.
+1. **Stealth Drop**: No roadmap, minimal information
+2. **KOL Seeding**: 10-15 influencers mint early
+3. **Post-Mint Reveal**: Full lore and voting mechanics
+4. **Episode 1**: One week after sellout
 
-## Connect
+### The Eight Clans
 
-- Website: [bushido.xyz]
-- Twitter: [@BushidoNFT]
-- Discord: [Join our community]
+- 🐲 Dragon - Courage
+- 🔥 Phoenix - Rebirth  
+- 🐯 Tiger - Strength
+- 🐍 Serpent - Wisdom
+- 🦅 Eagle - Vision
+- 🐺 Wolf - Loyalty
+- 🐻 Bear - Protection
+- 🦁 Lion - Leadership
+
+---
+
+*"Where art meets anime. Where ownership meets narrative. Where legends are born."*

@@ -1,16 +1,20 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "pnpm --parallel run dev",
-    "test": "pnpm --parallel run test",
-    "build": "pnpm --parallel run build",
-    "deploy:testnet": "pnpm --filter scripts run deploy:testnet",
-    "deploy:mainnet": "pnpm --filter scripts run deploy:mainnet"
-  },
   "version": "1.0.0",
+  "private": true,
+  "description": "Interactive NFT project with episodic anime storytelling",
+  "type": "module",
   "name": "bushido-nft",
   "devDependencies": {
-    "prettier": "^3.2.5",
-    "turbo": "^1.12.4"
+    "eslint": "^8.56.0",
+    "turbo": "latest",
+    "prettier": "^3.2.5"
+  },
+  "scripts": {
+    "test": "turbo run test",
+    "deploy:mainnet": "turbo run deploy --filter=@bushido/contracts -- --network abstract",
+    "deploy:testnet": "turbo run deploy --filter=@bushido/contracts -- --network abstractTestnet",
+    "dev": "turbo run dev --parallel",
+    "launch:stealth": "pnpm run build --filter=@bushido/frontend && vercel --prod",
+    "build": "turbo run build"
   }
 }

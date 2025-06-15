@@ -1,28 +1,14 @@
 {
-  "name": "@bushido/scripts",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "deploy": "tsx deploy.ts",
-    "deploy:testnet": "cross-env NETWORK=testnet tsx deploy.ts",
-    "deploy:mainnet": "cross-env NETWORK=mainnet tsx deploy.ts",
-    "generate-metadata": "tsx generate-metadata.ts",
-    "verify": "tsx verify-contract.ts",
-    "monitor": "tsx monitor-mint.ts"
-  },
-  "dependencies": {
-    "ethers": "^6.10.0",
-    "pinata": "^1.1.0",
-    "dotenv": "^16.3.1",
-    "chalk": "^5.3.0",
-    "ora": "^8.0.1",
-    "sharp": "^0.33.2"
-  },
+  "name": "@bushido/scripts",
   "devDependencies": {
-    "@types/node": "^20.11.5",
-    "typescript": "^5.3.3",
-    "tsx": "^4.7.0",
-    "cross-env": "^7.0.3"
+    "ipfs-http-client": "^60.0.1",
+    "chalk": "^5.3.0"
+  },
+  "scripts": {
+    "generate-metadata": "node src/generate-metadata.js",
+    "upload-ipfs": "node src/upload-ipfs.js"
   }
 }
